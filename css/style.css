@@ -185,6 +185,13 @@ a {
     align-items: start;
 }
 
+/* Pages without sidebar (categories, articles) */
+.main:not(:has(.sidebar)) {
+    grid-template-columns: 1fr;
+    max-width: 1400px;
+    margin: var(--space-8) auto;
+}
+
 /* ========== SIDEBAR ========== */
 .sidebar {
     background: var(--color-bg);
@@ -229,25 +236,37 @@ a {
     min-height: 500px;
 }
 
+/* Content without sidebar - more breathing room */
+.main:not(:has(.sidebar)) .content {
+    padding: var(--space-12);
+    border: none;
+    background: transparent;
+}
+
 .content h1 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--color-text);
-    margin: 0 0 var(--space-3) 0;
+    margin: 0 0 var(--space-6) 0;
     line-height: 1.2;
 }
 
 .content > p {
     font-size: 1.0625rem;
     color: var(--color-text-light);
-    margin: 0 0 var(--space-10) 0;
+    margin: 0 0 var(--space-8) 0;
 }
 
 .content h2 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-text);
-    margin: var(--space-10) 0 var(--space-6) 0;
+    margin: var(--space-12) 0 var(--space-6) 0;
+}
+
+/* First h2 (like "Popular Articles") */
+.content h2:first-of-type {
+    margin-top: var(--space-10);
 }
 
 .content h3 {
@@ -318,21 +337,46 @@ a {
 /* ========== ARTICLE GRID - PROPER GRID LAYOUT ========== */
 .article-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: var(--space-8);
+    margin: var(--space-8) 0 0 0;
+}
+
+/* Home page - 2 column max */
+.main:has(.sidebar) .article-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+/* Categories/Articles pages - 3 column */
+.main:not(:has(.sidebar)) .article-grid {
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
     gap: var(--space-6);
-    margin: 0;
+}
+
+/* Single category - center it and make it bigger */
+.article-grid:has(:only-child) {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+}
+
+.article-grid:has(:only-child) .article-card {
+    padding: var(--space-10);
+    min-height: 200px;
+    text-align: center;
+    justify-content: center;
 }
 
 /* ========== ARTICLE CARDS - CLEAN & MINIMAL ========== */
 .article-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    padding: var(--space-8);
     transition: all 0.2s ease;
     cursor: pointer;
-    height: 100%;
+    min-height: 140px;
 }
 
 /* Remove any text decoration on card and children */
@@ -353,8 +397,9 @@ a {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--color-text);
-    line-height: 1.4;
-    margin: 0 0 var(--space-4) 0;
+    line-height: 1.5;
+    margin: 0 0 auto 0;
+    flex-grow: 1;
     transition: color 0.2s;
 }
 
@@ -365,7 +410,9 @@ a {
 .article-card .article-meta {
     font-size: 0.875rem;
     color: var(--color-text-lighter);
-    margin: 0;
+    margin: var(--space-4) 0 0 0;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border-light);
 }
 
 /* Legacy article items */
@@ -463,8 +510,10 @@ a {
         order: 1;
     }
 
-    .article-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    .article-grid,
+    .main:has(.sidebar) .article-grid,
+    .main:not(:has(.sidebar)) .article-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 
@@ -505,8 +554,15 @@ a {
         font-size: 1.75rem;
     }
 
-    .article-grid {
+    .article-grid,
+    .main:has(.sidebar) .article-grid,
+    .main:not(:has(.sidebar)) .article-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-5);
+    }
+
+    .main:not(:has(.sidebar)) .content {
+        padding: var(--space-6);
     }
 }
 
