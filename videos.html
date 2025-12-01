@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +13,21 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="header-branding">
+                <a href="index.html" class="header-branding">
                     <img src="logo.png" alt="Userology Logo" class="header-logo">
                     <div class="header-text">
                         <h1>Userology Help Center</h1>
-                        <p>Watch video tutorials to learn how to use Userology</p>
                     </div>
-                </div>
-                <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search videos..." id="searchInput">
+                </a>
+                <div class="header-actions">
+                    <a href="mailto:support@userology.co.in" class="btn-submit">Submit a request</a>
                 </div>
             </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -37,375 +41,601 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Breadcrumbs -->
     <div class="container">
-        <main class="main">
-            <div class="content">
-                <h1>Video Tutorials</h1>
-                <p>Watch step-by-step video guides to help you master Userology features. Click on any video to watch.</p>
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">&rsaquo;</span>
+            <span class="current">Video Tutorials</span>
+        </nav>
+    </div>
 
-                <div class="video-grid">
+    <main class="home-main">
+        <div class="container">
+            <div class="content-full">
+                <h1 class="page-title">Video Tutorials</h1>
+                <p class="page-description">Watch step-by-step video guides to help you master Userology features.</p>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                <!-- Search and Sort Bar -->
+                <div class="videos-toolbar">
+                    <div class="videos-search">
+                        <svg class="videos-search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input type="text" id="videosSearchInput" class="videos-search-input" placeholder="Search videos by topic or feature...">
+                    </div>
+                    <div class="videos-sort">
+                        <select id="videosSortSelect" class="videos-sort-select">
+                            <option value="title-asc">Sort: A-Z</option>
+                            <option value="title-desc">Sort: Z-A</option>
+                            <option value="category">Sort: Category</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div class="videos-filter-tabs">
+                    <button class="video-filter-tab active" data-category="all">All</button>
+                    <button class="video-filter-tab" data-category="Getting Started">Getting Started</button>
+                    <button class="video-filter-tab" data-category="Interview Plan">Interview Plan</button>
+                    <button class="video-filter-tab" data-category="Study Settings">Study Settings</button>
+                    <button class="video-filter-tab" data-category="Recruitment">Recruitment</button>
+                    <button class="video-filter-tab" data-category="Responses">Responses</button>
+                    <button class="video-filter-tab" data-category="Results & AI">Results & AI</button>
+                    <button class="video-filter-tab" data-category="Team & Settings">Team & Settings</button>
+                </div>
+
+                <!-- Videos Count -->
+                <div class="videos-count">
+                    Showing <span id="videosCount">27</span> videos
+                </div>
+
+                <!-- Videos Grid -->
+                <div class="videos-grid-enhanced" id="videosGrid">
+
+                    <div class="video-card-enhanced" data-category="Getting Started" data-title="Creating your study on Userology">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Creating your study on Userology.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Getting Started</span>
                             <h3>Creating your study on Userology</h3>
-                            <p class="video-description">Learn how to create and set up a new study on the Userology platform.</p>
+                            <p class="video-description-text">Learn how to create and set up a new study on the Userology platform.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Getting Started" data-title="AI Discussion Guides">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/AI Discussion Guides.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Getting Started</span>
                             <h3>AI Discussion Guides</h3>
-                            <p class="video-description">Understand how AI-powered discussion guides enhance your usability testing.</p>
+                            <p class="video-description-text">Understand how AI-powered discussion guides enhance your usability testing.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="AI Moderator Configuration">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/AI Moderator Configuration.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
                             <h3>AI Moderator Configuration</h3>
-                            <p class="video-description">Configure the AI moderator settings for your research sessions.</p>
+                            <p class="video-description-text">Configure the AI moderator settings for your research sessions.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Results & AI" data-title="AI Transcript">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/AI Transcript.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Results & AI</span>
                             <h3>AI Transcript</h3>
-                            <p class="video-description">Learn how to access and utilize AI-generated transcripts from your sessions.</p>
+                            <p class="video-description-text">Learn how to access and utilize AI-generated transcripts from your sessions.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Results & AI" data-title="Ask AI Feature">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Ask AI Feature.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Results & AI</span>
                             <h3>Ask AI Feature</h3>
-                            <p class="video-description">Discover how to use the Ask AI feature to get insights from your research data.</p>
+                            <p class="video-description-text">Discover how to use the Ask AI feature to get insights from your research data.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Configuring Devices and Browsers">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Configuring Devices and Browsers.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
                             <h3>Configuring Devices and Browsers</h3>
-                            <p class="video-description">Set up device and browser requirements for your study participants.</p>
+                            <p class="video-description-text">Set up device and browser requirements for your study participants.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Responses" data-title="Downloading and Creating Clips">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Downloading and Creating Clips.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Responses</span>
                             <h3>Downloading and Creating Clips</h3>
-                            <p class="video-description">Learn how to download recordings and create clips from your research sessions.</p>
+                            <p class="video-description-text">Learn how to download recordings and create clips from your research sessions.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Team & Settings" data-title="Duplicating a study on userology">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Duplicating a study on userology.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Duplicating a study on userology</h3>
-                            <p class="video-description">Quickly duplicate an existing study to save time on setup.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Team & Settings</span>
+                            <h3>Duplicating a study on Userology</h3>
+                            <p class="video-description-text">Quickly duplicate an existing study to save time on setup.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Recruitment" data-title="External Recruitment">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/External Recruitment.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Recruitment</span>
                             <h3>External Recruitment</h3>
-                            <p class="video-description">Learn how to recruit participants from external sources for your studies.</p>
+                            <p class="video-description-text">Learn how to recruit participants from external sources for your studies.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Recruitment" data-title="Launching Your Study and Recruiting Participants">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Launching Your Study and Recruiting Participants.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Recruitment</span>
                             <h3>Launching Your Study and Recruiting Participants</h3>
-                            <p class="video-description">Complete guide to launching your study and recruiting participants.</p>
+                            <p class="video-description-text">Complete guide to launching your study and recruiting participants.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Interview Plan" data-title="Live Product Section">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Live Product Section.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Interview Plan</span>
                             <h3>Live Product Section</h3>
-                            <p class="video-description">Set up and configure the live product testing section in your study.</p>
+                            <p class="video-description-text">Set up and configure the live product testing section in your study.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Team & Settings" data-title="Managing Team and Inviting Members">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Managing Team and Inviting Members.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Team & Settings</span>
                             <h3>Managing Team and Inviting Members</h3>
-                            <p class="video-description">Add and manage team members in your Userology organization.</p>
+                            <p class="video-description-text">Add and manage team members in your Userology organization.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Team & Settings" data-title="Organization settings">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Organization settings.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Organization settings</h3>
-                            <p class="video-description">Configure your organization settings and preferences.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Team & Settings</span>
+                            <h3>Organization Settings</h3>
+                            <p class="video-description-text">Configure your organization settings and preferences.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Personalizing Your Study">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Personalizing Your Study.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
                             <h3>Personalizing Your Study</h3>
-                            <p class="video-description">Customize your study with branding and personalization options.</p>
+                            <p class="video-description-text">Customize your study with branding and personalization options.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Preview Session">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Preview Session.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
                             <h3>Preview Session</h3>
-                            <p class="video-description">Preview how your study will appear to participants before launching.</p>
+                            <p class="video-description-text">Preview how your study will appear to participants before launching.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Interview Plan" data-title="Prototype Section">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Prototype Section.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Interview Plan</span>
                             <h3>Prototype Section</h3>
-                            <p class="video-description">Set up prototype testing sections for your design research.</p>
+                            <p class="video-description-text">Set up prototype testing sections for your design research.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Results & AI" data-title="QnA results">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/QnA results.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>QnA results</h3>
-                            <p class="video-description">Analyze and interpret Q&A results from your research sessions.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Results & AI</span>
+                            <h3>QnA Results</h3>
+                            <p class="video-description-text">Analyze and interpret Q&A results from your research sessions.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Recording permission settings">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Recording permission settings.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Recording permission settings</h3>
-                            <p class="video-description">Configure recording permissions and privacy settings for your studies.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
+                            <h3>Recording Permission Settings</h3>
+                            <p class="video-description-text">Configure recording permissions and privacy settings for your studies.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Responses" data-title="Recordings page">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Recordings page.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Recordings page</h3>
-                            <p class="video-description">Navigate and manage all your session recordings in one place.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Responses</span>
+                            <h3>Recordings Page</h3>
+                            <p class="video-description-text">Navigate and manage all your session recordings in one place.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Recruitment" data-title="Recruit Participant Yourself">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Recruit Participant Yourself.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Recruit Participant Yourself</h3>
-                            <p class="video-description">Learn how to recruit and invite your own participants to studies.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Recruitment</span>
+                            <h3>Recruit Participants Yourself</h3>
+                            <p class="video-description-text">Learn how to recruit and invite your own participants to studies.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Sign In Feature">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Sign In Feature.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
                             <h3>Sign In Feature</h3>
-                            <p class="video-description">Set up sign-in requirements for your study participants.</p>
+                            <p class="video-description-text">Set up sign-in requirements for your study participants.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Time estimation feature">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Time estimation feature.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Time estimation feature</h3>
-                            <p class="video-description">Use the time estimation feature to plan your study duration.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
+                            <h3>Time Estimation Feature</h3>
+                            <p class="video-description-text">Use the time estimation feature to plan your study duration.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Responses" data-title="Types of responses">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Types of responses .mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Types of responses</h3>
-                            <p class="video-description">Understand the different types of responses you can collect in your studies.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Responses</span>
+                            <h3>Types of Responses</h3>
+                            <p class="video-description-text">Understand the different types of responses you can collect in your studies.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Results & AI" data-title="Understanding Quantitative Results">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Understanding Quantitative Results .mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Results & AI</span>
                             <h3>Understanding Quantitative Results</h3>
-                            <p class="video-description">Learn how to analyze and interpret quantitative data from your research.</p>
+                            <p class="video-description-text">Learn how to analyze and interpret quantitative data from your research.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Study Settings" data-title="Uploading a Legal Document to Your Study">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Uploading a Legal Document to Your Study.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Uploading a Legal Document to Your Study</h3>
-                            <p class="video-description">Add consent forms and legal documents to your study setup.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Study Settings</span>
+                            <h3>Uploading a Legal Document</h3>
+                            <p class="video-description-text">Add consent forms and legal documents to your study setup.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Results & AI" data-title="Usability score">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Usability score.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
-                            <h3>Usability score</h3>
-                            <p class="video-description">Understand and interpret usability scores from your testing sessions.</p>
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Results & AI</span>
+                            <h3>Usability Score</h3>
+                            <p class="video-description-text">Understand and interpret usability scores from your testing sessions.</p>
                         </div>
                     </div>
 
-                    <div class="video-card">
-                        <div class="video-thumbnail">
+                    <div class="video-card-enhanced" data-category="Interview Plan" data-title="Voice Interview Section">
+                        <div class="video-thumbnail-enhanced">
                             <video controls preload="metadata">
                                 <source src="videos/Voice Interview Section.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
+                            <div class="video-play-overlay">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
-                        <div class="video-info">
+                        <div class="video-info-enhanced">
+                            <span class="video-category-tag">Interview Plan</span>
                             <h3>Voice Interview Section</h3>
-                            <p class="video-description">Set up and conduct voice interviews as part of your research studies.</p>
+                            <p class="video-description-text">Set up and conduct voice interviews as part of your research studies.</p>
                         </div>
                     </div>
 
                 </div>
+
+                <!-- No Results Message -->
+                <div class="videos-no-results" id="noVideosResults" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3>No videos found</h3>
+                    <p>Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+
+                <!-- Support CTA Card -->
+                <div class="support-cta-card">
+                    <h2>Still looking for an answer?</h2>
+                    <p>If you can't find what you're looking for, our support team is ready to help you out.</p>
+                    <a href="mailto:support@userology.co.in" class="support-cta-btn">Contact Support</a>
+                </div>
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>© 2025 Userology. All rights reserved.</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-header">
+                        <img src="logo.png" alt="Userology">
+                        <span>Userology</span>
+                    </div>
+                    <p>AI-powered user research platform that helps you conduct, analyze, and share qualitative research at scale.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Browse Topics</a></li>
+                        <li><a href="articles.html">All Articles</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Popular Topics</h4>
+                    <ul>
+                        <li><a href="section_25457022454173.html">Study Setup</a></li>
+                        <li><a href="section_25456987366429.html">Study Settings</a></li>
+                        <li><a href="section_25457015415453.html">Responses</a></li>
+                        <li><a href="section_25457032160541.html">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@userology.co.in">Contact Support</a></li>
+                        <li><a href="https://userology.co" target="_blank">Visit Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Userology. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://x.com/UserologyHQ" target="_blank" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/userology-ai/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCycfOrcvH3iZjGaxjeqnUQQ" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar-overlay"></div>
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <img src="logo.png" alt="Userology">
+            <button class="mobile-sidebar-close" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-sidebar-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Browse Topics</a></li>
+                <li><a href="articles.html">All Articles</a></li>
+                <li><a href="videos.html" class="active">Videos</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-sidebar-section">
+            <h4>Popular Topics</h4>
+            <ul>
+                <li><a href="section_25457022454173.html">Study Setup</a></li>
+                <li><a href="section_25456987366429.html">Study Settings</a></li>
+                <li><a href="section_25457015415453.html">Responses & Recordings</a></li>
+                <li><a href="section_25457032160541.html">Results & Reports</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
 
     <script src="js/main.js"></script>
 </body>

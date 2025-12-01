@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,17 +13,21 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
-                <div class="header-branding">
+                <a href="index.html" class="header-branding">
                     <img src="logo.png" alt="Userology Logo" class="header-logo">
                     <div class="header-text">
                         <h1>Userology Help Center</h1>
-                        <p>Browse all help articles</p>
                     </div>
-                </div>
-                <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search articles..." id="searchInput">
+                </a>
+                <div class="header-actions">
+                    <a href="mailto:support@userology.co.in" class="btn-submit">Submit a request</a>
                 </div>
             </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -37,180 +41,291 @@
             </ul>
         </div>
     </nav>
+
+    <!-- Breadcrumbs -->
     <div class="container">
-        <main class="main">
-            <div class="content">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">&rsaquo;</span>
+            <span class="current">All Articles</span>
+        </nav>
+    </div>
+
+    <div class="container">
+        <main class="home-main">
+            <div class="content-full">
                 <h1>All Articles</h1>
-                <div class="article-grid">
+                <p>Browse all help articles to find what you need.</p>
 
-                    <a href="article_25562114444061.html" class="article-card">
+                <!-- Search and Filter Bar -->
+                <div class="articles-toolbar">
+                    <div class="articles-search">
+                        <svg class="articles-search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <input type="text" id="articlesSearchInput" class="articles-search-input" placeholder="Search for articles...">
+                    </div>
+                    <div class="articles-sort">
+                        <select id="articlesSortSelect" class="articles-sort-select">
+                            <option value="title-asc">Sort: A-Z</option>
+                            <option value="title-desc">Sort: Z-A</option>
+                            <option value="category">Sort: Category</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Filter Tabs -->
+                <div class="articles-filter-tabs">
+                    <button class="filter-tab active" data-category="all">All</button>
+                    <button class="filter-tab" data-category="Study Setup">Study Setup</button>
+                    <button class="filter-tab" data-category="Interview Plan">Interview Plan</button>
+                    <button class="filter-tab" data-category="Study Settings">Study Settings</button>
+                    <button class="filter-tab" data-category="Launch">Launch</button>
+                    <button class="filter-tab" data-category="Responses">Responses</button>
+                    <button class="filter-tab" data-category="Results">Results</button>
+                    <button class="filter-tab" data-category="Settings">Settings</button>
+                </div>
+
+                <!-- Articles Count -->
+                <div class="articles-count">
+                    Showing <span id="articlesCount">24</span> articles
+                </div>
+
+                <!-- Articles Grid -->
+                <div class="articles-grid-enhanced" id="articlesGrid">
+
+                    <a href="article_25562114444061.html" class="article-card-enhanced" data-category="Study Settings" data-title="Configuring Device and Browser Requirements in Userology">
+                        <span class="article-category-tag">Study Settings</span>
                         <h3>Configuring Device and Browser Requirements in Userology</h3>
-                        <div class="article-meta">
-                            General → Study settings
+                        <p class="article-description">Learn how to set up device and browser requirements for your research studies.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562045316637.html" class="article-card">
+                    <a href="article_25562045316637.html" class="article-card-enhanced" data-category="Study Settings" data-title="Configuring the AI Moderator in Userology">
+                        <span class="article-category-tag">Study Settings</span>
                         <h3>Configuring the AI Moderator in Userology</h3>
-                        <div class="article-meta">
-                            General → Study settings
+                        <p class="article-description">Customize the AI moderator's language, voice, avatar, and behavior settings.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562389245085.html" class="article-card">
+                    <a href="article_25562389245085.html" class="article-card-enhanced" data-category="Responses" data-title="Creating and Downloading Clips, files in Userology">
+                        <span class="article-category-tag">Responses</span>
                         <h3>Creating and Downloading Clips, files in Userology</h3>
-                        <div class="article-meta">
-                            General → Responses and Recordings
+                        <p class="article-description">Learn how to create clips and download files from your research sessions.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25456988151453.html" class="article-card">
+                    <a href="article_25456988151453.html" class="article-card-enhanced" data-category="Study Setup" data-title="Creating your study on Userology">
+                        <span class="article-category-tag">Study Setup</span>
                         <h3>Creating your study on Userology</h3>
-                        <div class="article-meta">
-                            General → Study setup
+                        <p class="article-description">Get started by creating and configuring your first research study.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562292368669.html" class="article-card">
+                    <a href="article_25562292368669.html" class="article-card-enhanced" data-category="Settings" data-title="Duplicating a Study on the Userology Platform">
+                        <span class="article-category-tag">Settings</span>
                         <h3>Duplicating a Study on the Userology Platform</h3>
-                        <div class="article-meta">
-                            General → Settings and Admin
+                        <p class="article-description">Save time by duplicating existing studies as templates.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562367390237.html" class="article-card">
+                    <a href="article_25562367390237.html" class="article-card-enhanced" data-category="Settings" data-title="Managing Your Team and Inviting Teammates on Userology">
+                        <span class="article-category-tag">Settings</span>
                         <h3>Managing Your Team and Inviting Teammates on Userology</h3>
-                        <div class="article-meta">
-                            General → Settings and Admin
+                        <p class="article-description">Collaborate effectively by managing team members and permissions.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562500326813.html" class="article-card">
+                    <a href="article_25562500326813.html" class="article-card-enhanced" data-category="Responses" data-title="Navigating the Recordings Page on Userology">
+                        <span class="article-category-tag">Responses</span>
                         <h3>Navigating the Recordings Page on Userology</h3>
-                        <div class="article-meta">
-                            General → Responses and Recordings
+                        <p class="article-description">Navigate and manage your session recordings efficiently.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562330763805.html" class="article-card">
+                    <a href="article_25562330763805.html" class="article-card-enhanced" data-category="Responses" data-title="Organization Settings on Userology Platform">
+                        <span class="article-category-tag">Responses</span>
                         <h3>Organization Settings on Userology Platform</h3>
-                        <div class="article-meta">
-                            General → Responses and Recordings
+                        <p class="article-description">Configure organization-wide settings and preferences.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562265024797.html" class="article-card">
+                    <a href="article_25562265024797.html" class="article-card-enhanced" data-category="Study Settings" data-title="Personalizing Your Study in Userology">
+                        <span class="article-category-tag">Study Settings</span>
                         <h3>Personalizing Your Study in Userology</h3>
-                        <div class="article-meta">
-                            General → Study settings
+                        <p class="article-description">Customize your study's branding and appearance.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562312351389.html" class="article-card">
+                    <a href="article_25562312351389.html" class="article-card-enhanced" data-category="Launch" data-title="Preview session on Userology">
+                        <span class="article-category-tag">Launch</span>
                         <h3>Preview session on Userology</h3>
-                        <div class="article-meta">
-                            General → Launch
+                        <p class="article-description">Test your study before launching it to participants.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562947923741.html" class="article-card">
+                    <a href="article_25562947923741.html" class="article-card-enhanced" data-category="Results" data-title="QnA Results Section in Userology">
+                        <span class="article-category-tag">Results</span>
                         <h3>QnA Results Section in Userology</h3>
-                        <div class="article-meta">
-                            General → Results and Reports
+                        <p class="article-description">Analyze question and answer results from your studies.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562210431261.html" class="article-card">
+                    <a href="article_25562210431261.html" class="article-card-enhanced" data-category="Study Settings" data-title="Recording Permission Settings in Userology">
+                        <span class="article-category-tag">Study Settings</span>
                         <h3>Recording Permission Settings in Userology</h3>
-                        <div class="article-meta">
-                            General → Study settings
+                        <p class="article-description">Configure recording permissions and consent settings.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562272476829.html" class="article-card">
+                    <a href="article_25562272476829.html" class="article-card-enhanced" data-category="Launch" data-title="Recruiting Participants in Userology">
+                        <span class="article-category-tag">Launch</span>
                         <h3>Recruiting Participants in Userology</h3>
-                        <div class="article-meta">
-                            General → Launch
+                        <p class="article-description">Learn how to recruit and manage participants for your studies.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562216141213.html" class="article-card">
+                    <a href="article_25562216141213.html" class="article-card-enhanced" data-category="Study Settings" data-title="Setting Up the Sign-In Feature on Userology">
+                        <span class="article-category-tag">Study Settings</span>
                         <h3>Setting Up the Sign-In Feature on Userology</h3>
-                        <div class="article-meta">
-                            General → Study settings
+                        <p class="article-description">Configure participant sign-in and authentication.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25457016697629.html" class="article-card">
+                    <a href="article_25457016697629.html" class="article-card-enhanced" data-category="Interview Plan" data-title="Setting up a Live Product Research Section in Userology">
+                        <span class="article-category-tag">Interview Plan</span>
                         <h3>Setting up a Live Product Research Section in Userology</h3>
-                        <div class="article-meta">
-                            General → Interview Plan 
+                        <p class="article-description">Create live product research sections for real-time testing.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25457033877533.html" class="article-card">
+                    <a href="article_25457033877533.html" class="article-card-enhanced" data-category="Interview Plan" data-title="Setting up a Prototype Section in Userology">
+                        <span class="article-category-tag">Interview Plan</span>
                         <h3>Setting up a Prototype Section in Userology</h3>
-                        <div class="article-meta">
-                            General → Interview Plan 
+                        <p class="article-description">Add Figma prototypes to your interview plan for usability testing.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25561689734941.html" class="article-card">
+                    <a href="article_25561689734941.html" class="article-card-enhanced" data-category="Interview Plan" data-title="Setting up a Voice Interview Section in Userology">
+                        <span class="article-category-tag">Interview Plan</span>
                         <h3>Setting up a Voice Interview Section in Userology</h3>
-                        <div class="article-meta">
-                            General → Interview Plan 
+                        <p class="article-description">Create voice interview sections for qualitative research.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562407594781.html" class="article-card">
+                    <a href="article_25562407594781.html" class="article-card-enhanced" data-category="Responses" data-title="Types of responses in Userology">
+                        <span class="article-category-tag">Responses</span>
                         <h3>Types of responses in Userology</h3>
-                        <div class="article-meta">
-                            General → Responses and Recordings
+                        <p class="article-description">Understand the different types of participant responses.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25916667142045.html" class="article-card">
+                    <a href="article_25916667142045.html" class="article-card-enhanced" data-category="Results" data-title="Understanding Qualitative results section in Userology">
+                        <span class="article-category-tag">Results</span>
                         <h3>Understanding Qualitative results section in Userology</h3>
-                        <div class="article-meta">
-                            General → Results and Reports
+                        <p class="article-description">Analyze qualitative insights from your research data.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25916497212701.html" class="article-card">
+                    <a href="article_25916497212701.html" class="article-card-enhanced" data-category="Results" data-title="Understanding Quantitative Results in Userology">
+                        <span class="article-category-tag">Results</span>
                         <h3>Understanding Quantitative Results in Userology</h3>
-                        <div class="article-meta">
-                            General → Results and Reports
+                        <p class="article-description">Explore quantitative metrics and analytics from your studies.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562483675165.html" class="article-card">
+                    <a href="article_25562483675165.html" class="article-card-enhanced" data-category="Responses" data-title="Understanding the Usability Score on the Userology platform">
+                        <span class="article-category-tag">Responses</span>
                         <h3>Understanding the Usability Score on the Userology platform</h3>
-                        <div class="article-meta">
-                            General → Responses and Recordings
+                        <p class="article-description">Learn how usability scores are calculated and interpreted.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562126820125.html" class="article-card">
+                    <a href="article_25562126820125.html" class="article-card-enhanced" data-category="Study Settings" data-title="Uploading a Legal Document to Your Study in Userology">
+                        <span class="article-category-tag">Study Settings</span>
                         <h3>Uploading a Legal Document to Your Study in Userology</h3>
-                        <div class="article-meta">
-                            General → Study settings
+                        <p class="article-description">Add consent forms and legal documents to your studies.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25562457277597.html" class="article-card">
+                    <a href="article_25562457277597.html" class="article-card-enhanced" data-category="Responses" data-title="Utilizing the Ask AI Feature in Userology">
+                        <span class="article-category-tag">Responses</span>
                         <h3>Utilizing the Ask AI Feature in Userology</h3>
-                        <div class="article-meta">
-                            General → Responses and Recordings
+                        <p class="article-description">Use AI to analyze and query your research data.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
-                    <a href="article_25561782334749.html" class="article-card">
-                        <h3>What Is a Discussion Guide on Userology and How Does It Help in AI-Moderated Usability Testing?</h3>
-                        <div class="article-meta">
-                            General → Interview Plan 
+                    <a href="article_25561782334749.html" class="article-card-enhanced" data-category="Interview Plan" data-title="What Is a Discussion Guide on Userology and How Does It Help in AI-Moderated Usability Testing?">
+                        <span class="article-category-tag">Interview Plan</span>
+                        <h3>What Is a Discussion Guide on Userology?</h3>
+                        <p class="article-description">Understand discussion guides and their role in AI-moderated testing.</p>
+                        <div class="article-card-footer">
+                            <span class="article-read-more">Read More &rarr;</span>
                         </div>
                     </a>
 
+                </div>
+
+                <!-- No Results Message -->
+                <div class="articles-no-results" id="noResults" style="display: none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <h3>No articles found</h3>
+                    <p>Try adjusting your search or filter to find what you're looking for.</p>
+                </div>
+
+                <!-- Support CTA Card -->
+                <div class="support-cta-card">
+                    <h2>Still looking for an answer?</h2>
+                    <p>If you can't find what you're looking for, our support team is ready to help you out.</p>
+                    <a href="mailto:support@userology.co.in" class="support-cta-btn">Contact Support</a>
                 </div>
             </div>
         </main>
@@ -218,8 +333,94 @@
 
     <footer class="footer">
         <div class="container">
-            <p>Offline Help Center - Generated on 2025-09-11 20:08:52</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-brand-header">
+                        <img src="logo.png" alt="Userology">
+                        <span>Userology</span>
+                    </div>
+                    <p>AI-powered user research platform that helps you conduct, analyze, and share qualitative research at scale.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="categories.html">Browse Topics</a></li>
+                        <li><a href="articles.html">All Articles</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Popular Topics</h4>
+                    <ul>
+                        <li><a href="section_25457022454173.html">Study Setup</a></li>
+                        <li><a href="section_25456987366429.html">Study Settings</a></li>
+                        <li><a href="section_25457015415453.html">Responses</a></li>
+                        <li><a href="section_25457032160541.html">Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@userology.co.in">Contact Support</a></li>
+                        <li><a href="https://userology.co" target="_blank">Visit Website</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Userology. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://x.com/UserologyHQ" target="_blank" aria-label="X">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/userology-ai/" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCycfOrcvH3iZjGaxjeqnUQQ" target="_blank" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Mobile Sidebar -->
+    <div class="mobile-sidebar-overlay"></div>
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <img src="logo.png" alt="Userology">
+            <button class="mobile-sidebar-close" aria-label="Close menu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-sidebar-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Browse Topics</a></li>
+                <li><a href="articles.html" class="active">All Articles</a></li>
+                <li><a href="videos.html">Videos</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-sidebar-section">
+            <h4>Popular Topics</h4>
+            <ul>
+                <li><a href="section_25457022454173.html">Study Setup</a></li>
+                <li><a href="section_25456987366429.html">Study Settings</a></li>
+                <li><a href="section_25457015415453.html">Responses & Recordings</a></li>
+                <li><a href="section_25457032160541.html">Results & Reports</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

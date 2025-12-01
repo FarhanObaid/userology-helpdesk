@@ -172,319 +172,437 @@ class OfflineWebsiteGenerator:
     def create_css(self):
         """Create CSS styling for the help center"""
         css_content = """
-/* Zendesk Copenhagen Theme - Offline Help Center */
+
+/* Userology Premium Help Center Theme */
 :root {
-    /* Zendesk Brand Colors */
-    --zd-color-text-primary: #2F3941;
-    --zd-color-text-secondary: #68737D;
-    --zd-color-text-tertiary: #9CA3AF;
-    --zd-color-text-inverse: #FFFFFF;
-    --zd-color-text-link: #17494D;
-    --zd-color-text-link-hover: #0F3A3D;
+    /* Brand Colors - Premium SaaS Palette */
+    --u-color-primary: #4F46E5; /* Indigo 600 */
+    --u-color-primary-dark: #4338CA; /* Indigo 700 */
+    --u-color-primary-light: #818CF8; /* Indigo 400 */
+    --u-color-secondary: #0F172A; /* Slate 900 */
+    
+    /* Text Colors */
+    --u-color-text-main: #1E293B; /* Slate 800 */
+    --u-color-text-muted: #64748B; /* Slate 500 */
+    --u-color-text-light: #94A3B8; /* Slate 400 */
+    --u-color-text-inverse: #FFFFFF;
     
     /* Background Colors */
-    --zd-color-background-primary: #FFFFFF;
-    --zd-color-background-secondary: #F7F8F9;
-    --zd-color-background-tertiary: #F1F3F4;
-    --zd-color-background-inverse: #2F3941;
+    --u-color-bg-main: #F8FAFC; /* Slate 50 */
+    --u-color-bg-card: #FFFFFF;
+    --u-color-bg-header: #FFFFFF;
+    --u-color-bg-footer: #0F172A; /* Slate 900 */
     
     /* Border Colors */
-    --zd-color-border-primary: #E5E7EB;
-    --zd-color-border-secondary: #D1D5DB;
-    --zd-color-border-focus: #17494D;
-    
-    /* Accent Colors */
-    --zd-color-accent-primary: #17494D;
-    --zd-color-accent-secondary: #2F3941;
-    --zd-color-accent-tertiary: #68737D;
+    --u-color-border: #E2E8F0; /* Slate 200 */
+    --u-color-border-hover: #CBD5E1; /* Slate 300 */
     
     /* Status Colors */
-    --zd-color-success: #10B981;
-    --zd-color-warning: #F59E0B;
-    --zd-color-error: #EF4444;
-    --zd-color-info: #3B82F6;
+    --u-color-success: #10B981;
+    --u-color-warning: #F59E0B;
+    --u-color-error: #EF4444;
+    --u-color-info: #3B82F6;
     
-    /* Spacing */
-    --zd-spacing-xs: 4px;
-    --zd-spacing-sm: 8px;
-    --zd-spacing-md: 16px;
-    --zd-spacing-lg: 24px;
-    --zd-spacing-xl: 32px;
-    --zd-spacing-2xl: 48px;
+    /* Spacing System */
+    --u-space-1: 0.25rem;
+    --u-space-2: 0.5rem;
+    --u-space-3: 0.75rem;
+    --u-space-4: 1rem;
+    --u-space-6: 1.5rem;
+    --u-space-8: 2rem;
+    --u-space-12: 3rem;
+    --u-space-16: 4rem;
     
     /* Typography */
-    --zd-font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --zd-font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
-    
-    /* Font Sizes */
-    --zd-font-size-xs: 12px;
-    --zd-font-size-sm: 14px;
-    --zd-font-size-md: 16px;
-    --zd-font-size-lg: 18px;
-    --zd-font-size-xl: 20px;
-    --zd-font-size-2xl: 24px;
-    --zd-font-size-3xl: 32px;
-    
-    /* Line Heights */
-    --zd-line-height-tight: 1.25;
-    --zd-line-height-normal: 1.5;
-    --zd-line-height-relaxed: 1.75;
+    --u-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --u-font-mono: 'JetBrains Mono', monospace;
     
     /* Shadows */
-    --zd-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --zd-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --zd-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --u-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --u-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --u-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --u-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     
-    /* Border Radius */
-    --zd-border-radius-sm: 4px;
-    --zd-border-radius-md: 6px;
-    --zd-border-radius-lg: 8px;
-    --zd-border-radius-xl: 12px;
+    /* Radius */
+    --u-radius-sm: 0.375rem;
+    --u-radius-md: 0.5rem;
+    --u-radius-lg: 0.75rem;
+    --u-radius-xl: 1rem;
+    --u-radius-full: 9999px;
+    
+    /* Transitions */
+    --u-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-* {
+/* Reset & Base */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--zd-font-family-primary);
-    font-size: var(--zd-font-size-md);
-    line-height: var(--zd-line-height-normal);
-    color: var(--zd-color-text-primary);
-    background-color: var(--zd-color-background-secondary);
+    font-family: var(--u-font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--u-color-text-main);
+    background-color: var(--u-color-bg-main);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Container */
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--u-color-secondary);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--u-space-4);
+}
+
+h1 { font-size: 2.5rem; letter-spacing: -0.025em; }
+h2 { font-size: 2rem; letter-spacing: -0.025em; margin-top: var(--u-space-12); }
+h3 { font-size: 1.5rem; letter-spacing: -0.025em; margin-top: var(--u-space-8); }
+h4 { font-size: 1.25rem; }
+
+p { margin-bottom: var(--u-space-4); }
+
+a {
+    color: var(--u-color-primary);
+    text-decoration: none;
+    transition: var(--u-transition);
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--u-color-primary-dark);
+}
+
+/* Layout */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--zd-spacing-lg);
+    padding: 0 var(--u-space-6);
 }
 
-/* Header - Zendesk Style */
+/* Header */
 .header {
-    background: var(--zd-color-background-primary);
-    border-bottom: 1px solid var(--zd-color-border-primary);
-    padding: var(--zd-spacing-lg) 0;
+    background: var(--u-color-bg-header);
+    border-bottom: 1px solid var(--u-color-border);
+    padding: var(--u-space-4) 0;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: var(--zd-shadow-sm);
+    z-index: 50;
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: var(--zd-spacing-md);
+    gap: var(--u-space-8);
 }
 
-.header h1 {
-    font-size: var(--zd-font-size-2xl);
-    font-weight: 600;
-    color: var(--zd-color-text-primary);
-    margin: 0;
+.header-branding {
+    display: flex;
+    align-items: center;
+    gap: var(--u-space-4);
+    text-decoration: none;
 }
 
-.header p {
-    font-size: var(--zd-font-size-sm);
-    color: var(--zd-color-text-secondary);
+.header-logo {
+    height: 40px;
+    width: auto;
+}
+
+.header-text h1 {
+    font-size: 1.25rem;
     margin: 0;
+    color: var(--u-color-secondary);
+}
+
+.header-text p {
+    display: none; /* Hide tagline in header for cleaner look */
 }
 
 /* Search Bar */
 .search-container {
     flex: 1;
-    max-width: 400px;
-    margin: 0 var(--zd-spacing-lg);
+    max-width: 480px;
+    position: relative;
 }
 
 .search-input {
     width: 100%;
-    padding: var(--zd-spacing-sm) var(--zd-spacing-md);
-    border: 1px solid var(--zd-color-border-secondary);
-    border-radius: var(--zd-border-radius-md);
-    font-size: var(--zd-font-size-sm);
-    background: var(--zd-color-background-primary);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    padding: var(--u-space-3) var(--u-space-4) var(--u-space-3) var(--u-space-12);
+    border: 1px solid var(--u-color-border);
+    border-radius: var(--u-radius-full);
+    font-size: 0.95rem;
+    background: var(--u-color-bg-main);
+    transition: var(--u-transition);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 1rem center;
+    background-size: 1.25rem;
 }
 
 .search-input:focus {
     outline: none;
-    border-color: var(--zd-color-border-focus);
-    box-shadow: 0 0 0 3px rgba(23, 73, 77, 0.1);
+    border-color: var(--u-color-primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    background-color: var(--u-color-bg-card);
 }
 
 /* Navigation */
 .nav {
-    background: var(--zd-color-background-primary);
-    border-bottom: 1px solid var(--zd-color-border-primary);
+    background: var(--u-color-bg-card);
+    border-bottom: 1px solid var(--u-color-border);
     padding: 0;
 }
 
 .nav ul {
     list-style: none;
     display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.nav li {
-    margin: 0;
+    gap: var(--u-space-8);
 }
 
 .nav a {
     display: block;
-    padding: var(--zd-spacing-md) var(--zd-spacing-lg);
-    color: var(--zd-color-text-secondary);
-    text-decoration: none;
-    font-size: var(--zd-font-size-sm);
-    font-weight: 500;
+    padding: var(--u-space-4) 0;
+    color: var(--u-color-text-muted);
+    font-size: 0.95rem;
     border-bottom: 2px solid transparent;
-    transition: all 0.2s ease;
 }
 
 .nav a:hover,
 .nav a.active {
-    color: var(--zd-color-text-link);
-    border-bottom-color: var(--zd-color-accent-primary);
-    background-color: var(--zd-color-background-tertiary);
+    color: var(--u-color-primary);
+    border-bottom-color: var(--u-color-primary);
 }
 
-/* Main Layout */
+/* Main Content */
 .main {
+    padding: var(--u-space-12) 0;
+    min-height: calc(100vh - 300px);
+}
+
+/* Hero Section (Home) */
+.hero {
+    text-align: center;
+    padding: var(--u-space-16) 0;
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+    border-radius: var(--u-radius-xl);
+    margin-bottom: var(--u-space-12);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--u-color-secondary);
+    margin-bottom: var(--u-space-6);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--u-color-text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Topic Grid */
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--u-space-6);
+    margin-bottom: var(--u-space-12);
+}
+
+.topic-card {
+    background: var(--u-color-bg-card);
+    border: 1px solid var(--u-color-border);
+    border-radius: var(--u-radius-lg);
+    padding: var(--u-space-8);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-decoration: none;
+    transition: var(--u-transition);
+    height: 100%;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--u-shadow-lg);
+    border-color: var(--u-color-primary-light);
+}
+
+.topic-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--u-space-4);
+    background: #EEF2FF;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--u-radius-md);
+}
+
+.topic-card h3 {
+    font-size: 1.25rem;
+    margin: 0 0 var(--u-space-2) 0;
+    color: var(--u-color-secondary);
+}
+
+.topic-card .topic-description {
+    color: var(--u-color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--u-space-4);
+    flex-grow: 1;
+}
+
+.topic-meta {
+    font-size: 0.875rem;
+    color: var(--u-color-primary);
+    font-weight: 600;
+    background: #EEF2FF;
+    padding: var(--u-space-1) var(--u-space-3);
+    border-radius: var(--u-radius-full);
+}
+
+/* Article Grid */
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--u-space-6);
+}
+
+.article-card {
+    background: var(--u-color-bg-card);
+    border: 1px solid var(--u-color-border);
+    border-radius: var(--u-radius-lg);
+    padding: var(--u-space-6);
+    display: block;
+    text-decoration: none;
+    transition: var(--u-transition);
+}
+
+.article-card:hover {
+    box-shadow: var(--u-shadow-md);
+    border-color: var(--u-color-primary-light);
+}
+
+.article-card h3 {
+    font-size: 1.1rem;
+    margin: 0 0 var(--u-space-3) 0;
+    color: var(--u-color-secondary);
+    line-height: 1.4;
+}
+
+.article-card:hover h3 {
+    color: var(--u-color-primary);
+}
+
+.article-meta {
+    font-size: 0.875rem;
+    color: var(--u-color-text-light);
+    display: flex;
+    align-items: center;
+    gap: var(--u-space-2);
+}
+
+/* Article Page Layout */
+.article-layout {
     display: grid;
     grid-template-columns: 280px 1fr;
-    gap: var(--zd-spacing-2xl);
-    margin: var(--zd-spacing-2xl) 0;
-    min-height: calc(100vh - 200px);
+    gap: var(--u-space-12);
 }
 
 /* Sidebar */
 .sidebar {
-    background: var(--zd-color-background-primary);
-    border: 1px solid var(--zd-color-border-primary);
-    border-radius: var(--zd-border-radius-lg);
-    padding: var(--zd-spacing-lg);
-    height: fit-content;
     position: sticky;
-    top: calc(var(--zd-spacing-2xl) + 80px);
-    box-shadow: var(--zd-shadow-sm);
+    top: 100px;
+    height: fit-content;
 }
 
 .sidebar h3 {
-    color: var(--zd-color-text-primary);
-    font-size: var(--zd-font-size-lg);
-    font-weight: 600;
-    margin: 0 0 var(--zd-spacing-md) 0;
-    padding-bottom: var(--zd-spacing-sm);
-    border-bottom: 1px solid var(--zd-color-border-primary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--u-color-text-muted);
+    margin-bottom: var(--u-space-4);
 }
 
 .sidebar ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sidebar li {
-    margin: 0;
 }
 
 .sidebar a {
     display: block;
-    padding: var(--zd-spacing-sm) 0;
-    color: var(--zd-color-text-secondary);
-    text-decoration: none;
-    font-size: var(--zd-font-size-sm);
-    border-radius: var(--zd-border-radius-sm);
-    transition: all 0.2s ease;
+    padding: var(--u-space-2) var(--u-space-3);
+    margin: var(--u-space-1) 0;
+    color: var(--u-color-text-main);
+    border-radius: var(--u-radius-md);
+    font-size: 0.95rem;
 }
 
 .sidebar a:hover {
-    color: var(--zd-color-text-link);
-    background-color: var(--zd-color-background-tertiary);
-    padding-left: var(--zd-spacing-sm);
+    background: var(--u-color-bg-main);
+    color: var(--u-color-primary);
+}
+
+.sidebar a.active {
+    background: #EEF2FF;
+    color: var(--u-color-primary);
+    font-weight: 600;
 }
 
 /* Content Area */
 .content {
-    background: var(--zd-color-background-primary);
-    border: 1px solid var(--zd-color-border-primary);
-    border-radius: var(--zd-border-radius-lg);
-    padding: var(--zd-spacing-2xl);
-    box-shadow: var(--zd-shadow-sm);
-}
-
-.content h1 {
-    color: var(--zd-color-text-primary);
-    font-size: var(--zd-font-size-3xl);
-    font-weight: 700;
-    margin: 0 0 var(--zd-spacing-md) 0;
-    line-height: var(--zd-line-height-tight);
-}
-
-.content h2 {
-    color: var(--zd-color-text-primary);
-    font-size: var(--zd-font-size-2xl);
-    font-weight: 600;
-    margin: var(--zd-spacing-2xl) 0 var(--zd-spacing-md) 0;
-    padding-bottom: var(--zd-spacing-sm);
-    border-bottom: 1px solid var(--zd-color-border-primary);
-}
-
-.content h3 {
-    color: var(--zd-color-text-primary);
-    font-size: var(--zd-font-size-xl);
-    font-weight: 600;
-    margin: var(--zd-spacing-xl) 0 var(--zd-spacing-sm) 0;
-}
-
-.content h4 {
-    color: var(--zd-color-text-primary);
-    font-size: var(--zd-font-size-lg);
-    font-weight: 600;
-    margin: var(--zd-spacing-lg) 0 var(--zd-spacing-sm) 0;
-}
-
-.content p {
-    margin: 0 0 var(--zd-spacing-md) 0;
-    color: var(--zd-color-text-primary);
-    line-height: var(--zd-line-height-relaxed);
+    background: var(--u-color-bg-card);
+    padding: var(--u-space-12);
+    border-radius: var(--u-radius-xl);
+    box-shadow: var(--u-shadow-sm);
+    border: 1px solid var(--u-color-border);
 }
 
 .content img {
     max-width: 100%;
     height: auto;
-    border-radius: var(--zd-border-radius-md);
-    margin: var(--zd-spacing-md) 0;
-    box-shadow: var(--zd-shadow-sm);
+    border-radius: var(--u-radius-lg);
+    box-shadow: var(--u-shadow-md);
+    margin: var(--u-space-8) 0;
+    border: 1px solid var(--u-color-border);
 }
 
-/* YouTube embeds */
-.content iframe {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--zd-border-radius-lg);
-    margin: var(--zd-spacing-lg) 0;
-    box-shadow: var(--zd-shadow-md);
+.content pre {
+    background: #1E293B;
+    color: #E2E8F0;
+    padding: var(--u-space-6);
+    border-radius: var(--u-radius-lg);
+    overflow-x: auto;
+    margin: var(--u-space-6) 0;
+    font-family: var(--u-font-mono);
+    font-size: 0.9rem;
 }
 
+.content blockquote {
+    border-left: 4px solid var(--u-color-primary);
+    background: #EEF2FF;
+    padding: var(--u-space-6);
+    border-radius: 0 var(--u-radius-lg) var(--u-radius-lg) 0;
+    margin: var(--u-space-6) 0;
+    font-style: italic;
+    color: var(--u-color-secondary);
+}
+
+/* YouTube Container */
 .youtube-container {
     position: relative;
-    width: 100%;
+    padding-bottom: 56.25%;
     height: 0;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    margin: var(--zd-spacing-lg) 0;
-    border-radius: var(--zd-border-radius-lg);
     overflow: hidden;
-    box-shadow: var(--zd-shadow-md);
+    border-radius: var(--u-radius-lg);
+    box-shadow: var(--u-shadow-lg);
+    margin: var(--u-space-8) 0;
 }
 
 .youtube-container iframe {
@@ -493,292 +611,55 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    border: none;
-}
-
-.content ul, .content ol {
-    margin: var(--zd-spacing-md) 0;
-    padding-left: var(--zd-spacing-xl);
-}
-
-.content li {
-    margin-bottom: var(--zd-spacing-sm);
-    color: var(--zd-color-text-primary);
-    line-height: var(--zd-line-height-relaxed);
-}
-
-.content a {
-    color: var(--zd-color-text-link);
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.content a:hover {
-    color: var(--zd-color-text-link-hover);
-    text-decoration: underline;
-}
-
-/* Article Grid */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--zd-spacing-lg);
-    margin: var(--zd-spacing-lg) 0;
-}
-
-.article-list {
-    display: grid;
-    gap: var(--zd-spacing-md);
-}
-
-/* Article Cards - Fully Clickable */
-.article-card {
-    display: block;
-    background: var(--zd-color-background-primary);
-    border: 1px solid var(--zd-color-border-primary);
-    border-radius: var(--zd-border-radius-lg);
-    padding: var(--zd-spacing-lg);
-    transition: all 0.2s ease;
-    box-shadow: var(--zd-shadow-sm);
-    text-decoration: none;
-    color: inherit;
-    height: 100%;
-    position: relative;
-}
-
-.article-card:hover {
-    border-color: var(--zd-color-border-focus);
-    box-shadow: var(--zd-shadow-md);
-    transform: translateY(-2px);
-    text-decoration: none;
-    color: inherit;
-}
-
-.article-card * {
-    text-decoration: none;
-}
-
-.article-card:hover * {
-    text-decoration: none;
-}
-
-.article-card h3 {
-    margin: 0 0 var(--zd-spacing-sm) 0;
-    font-size: var(--zd-font-size-lg);
-    font-weight: 600;
-    color: var(--zd-color-text-primary);
-    line-height: var(--zd-line-height-tight);
-}
-
-.article-card:hover h3 {
-    color: var(--zd-color-text-link);
-}
-
-.article-card h3 {
-    text-decoration: none;
-}
-
-.article-card:hover h3 {
-    text-decoration: none;
-}
-
-.article-card .article-meta {
-    font-size: var(--zd-font-size-sm);
-    color: var(--zd-color-text-tertiary);
-    margin-bottom: var(--zd-spacing-sm);
-}
-
-
-/* Legacy article-item for backward compatibility */
-.article-item {
-    background: var(--zd-color-background-primary);
-    border: 1px solid var(--zd-color-border-primary);
-    border-radius: var(--zd-border-radius-lg);
-    padding: var(--zd-spacing-lg);
-    transition: all 0.2s ease;
-    box-shadow: var(--zd-shadow-sm);
-}
-
-.article-item:hover {
-    border-color: var(--zd-color-border-focus);
-    box-shadow: var(--zd-shadow-md);
-    transform: translateY(-1px);
-}
-
-.article-item h3 {
-    margin: 0 0 var(--zd-spacing-sm) 0;
-    font-size: var(--zd-font-size-lg);
-    font-weight: 600;
-}
-
-.article-item h3 a {
-    color: var(--zd-color-text-primary);
-    text-decoration: none;
-}
-
-.article-item h3 a:hover {
-    color: var(--zd-color-text-link);
-}
-
-.article-meta {
-    font-size: var(--zd-font-size-sm);
-    color: var(--zd-color-text-tertiary);
-    margin-bottom: var(--zd-spacing-sm);
-}
-
-.article-excerpt {
-    color: var(--zd-color-text-secondary);
-    font-size: var(--zd-font-size-sm);
-    line-height: var(--zd-line-height-relaxed);
 }
 
 /* Footer */
 .footer {
-    background: var(--zd-color-background-inverse);
-    color: var(--zd-color-text-inverse);
-    text-align: center;
-    padding: var(--zd-spacing-2xl) 0;
-    margin-top: var(--zd-spacing-2xl);
-    border-top: 1px solid var(--zd-color-border-primary);
+    background: var(--u-color-bg-footer);
+    color: var(--u-color-text-inverse);
+    padding: var(--u-space-12) 0;
+    margin-top: var(--u-space-16);
 }
 
 .footer p {
-    font-size: var(--zd-font-size-sm);
-    opacity: 0.8;
-    margin: 0;
+    color: var(--u-color-text-light);
+    text-align: center;
+    font-size: 0.9rem;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 1024px) {
-    .main {
+    .article-layout {
         grid-template-columns: 1fr;
-        gap: var(--zd-spacing-lg);
     }
     
     .sidebar {
-        position: static;
-        order: 2;
-    }
-    
-    .content {
-        order: 1;
-    }
-    
-    .article-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: var(--zd-spacing-md);
+        display: none; /* Hide sidebar on mobile for now, can be improved later */
     }
 }
 
 @media (max-width: 768px) {
-    .container {
-        padding: 0 var(--zd-spacing-md);
-    }
-    
     .header-content {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: var(--u-space-4);
     }
     
     .search-container {
-        width: 100%;
         max-width: none;
-        margin: var(--zd-spacing-md) 0 0 0;
     }
     
     .nav ul {
-        flex-direction: column;
-        width: 100%;
+        overflow-x: auto;
+        padding-bottom: var(--u-space-2);
     }
     
-    .nav a {
-        border-bottom: none;
-        border-left: 3px solid transparent;
-    }
-    
-    .nav a:hover,
-    .nav a.active {
-        border-left-color: var(--zd-color-accent-primary);
-        border-bottom-color: transparent;
+    .hero h1 {
+        font-size: 2rem;
     }
     
     .content {
-        padding: var(--zd-spacing-lg);
-    }
-    
-    .content h1 {
-        font-size: var(--zd-font-size-2xl);
-    }
-    
-    .main {
-        margin: var(--zd-spacing-lg) 0;
-    }
-    
-    .article-grid {
-        grid-template-columns: 1fr;
-        gap: var(--zd-spacing-md);
-    }
-}
-
-@media (max-width: 480px) {
-    .content {
-        padding: var(--zd-spacing-md);
-    }
-    
-    .content h1 {
-        font-size: var(--zd-font-size-xl);
-    }
-    
-    .sidebar {
-        padding: var(--zd-spacing-md);
-    }
-}
-
-/* Print Styles */
-@media print {
-    .nav, .sidebar, .footer, .search-container {
-        display: none;
-    }
-    
-    .main {
-        grid-template-columns: 1fr;
-        margin: 0;
-    }
-    
-    .content {
-        box-shadow: none;
-        border: none;
-        padding: 0;
-    }
-    
-    .header {
-        position: static;
-        border-bottom: 2px solid var(--zd-color-text-primary);
-    }
-}
-
-/* Focus styles for accessibility */
-*:focus {
-    outline: 2px solid var(--zd-color-border-focus);
-    outline-offset: 2px;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-    :root {
-        --zd-color-text-primary: #000000;
-        --zd-color-text-secondary: #333333;
-        --zd-color-border-primary: #000000;
-        --zd-color-border-secondary: #666666;
-    }
-}
-
-/* Reduced motion support */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        padding: var(--u-space-6);
     }
 }
 """
@@ -872,15 +753,18 @@ document.addEventListener('DOMContentLoaded', function() {
 <body>
     <header class="header">
         <div class="container">
-            <div class="header-content">
-                <div>
+            <div class="header-branding">
+                <img src="logo.png" alt="Userology Logo" class="header-logo">
+                <div class="header-text">
                     <h1>Userology Help Center</h1>
-                    <p>{description}</p>
-                </div>
-                <div class="search-container">
-                    <input type="search" class="search-input" placeholder="Search articles..." id="searchInput">
+                    <p>Your complete guide to using Userology</p>
                 </div>
             </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -888,8 +772,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">Categories</a></li>
+                <li><a href="categories.html">Browse Topics</a></li>
                 <li><a href="articles.html">All Articles</a></li>
+                <li><a href="videos.html">Videos</a></li>
             </ul>
         </div>
     </nav>"""
@@ -973,12 +858,18 @@ document.addEventListener('DOMContentLoaded', function() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{category['name']} - Userology Help Center</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1>Userology Help Center</h1>
-            <p>Your complete guide to using Userology</p>
+            <div class="header-branding">
+                <img src="logo.png" alt="Userology Logo" class="header-logo">
+                <div class="header-text">
+                    <h1>Userology Help Center</h1>
+                    <p>Your complete guide to using Userology</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -986,8 +877,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">All Categories</a></li>
+                <li><a href="categories.html">Browse Topics</a></li>
                 <li><a href="articles.html">All Articles</a></li>
+                <li><a href="videos.html">Videos</a></li>
             </ul>
         </div>
     </nav>
@@ -1007,24 +899,28 @@ document.addEventListener('DOMContentLoaded', function() {
             </aside>
 
             <div class="content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>{category['name']}</span>
+                </div>
+
                 <h1>{category['name']}</h1>
-                <p>{category.get('description', '')}</p>
-                
-                <h2>Sections</h2>
-                <div class="article-list">
+                <p class="section-description">{category.get('description', '')}</p>
+
+                <h2>Sections ({len(sections)})</h2>
+                <div class="topic-grid">
 """
-        
+
         for section in sections:
             articles = self.articles_by_section.get(section['id'], [])
             html_content += f"""
-                    <div class="article-item">
-                        <h3><a href="section_{section['id']}.html">{section['name']}</a></h3>
-                        <div class="article-meta">
-                            {len(articles)} articles
-                        </div>
-                    </div>
+                    <a href="section_{section['id']}.html" class="topic-card">
+                        <h3>{section['name']}</h3>
+                        <p class="topic-meta">{len(articles)} articles</p>
+                    </a>
 """
-        
+
         html_content += """
                 </div>
             </div>
@@ -1033,7 +929,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     <footer class="footer">
         <div class="container">
-            <p>Offline Help Center - Generated on """ + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + """</p>
+            <p>© 2025 Userology. All rights reserved.</p>
         </div>
     </footer>
 </body>
@@ -1056,12 +952,18 @@ document.addEventListener('DOMContentLoaded', function() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{section['name']} - Userology Help Center</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1>Userology Help Center</h1>
-            <p>Your complete guide to using Userology</p>
+            <div class="header-branding">
+                <img src="logo.png" alt="Userology Logo" class="header-logo">
+                <div class="header-text">
+                    <h1>Userology Help Center</h1>
+                    <p>Your complete guide to using Userology</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -1069,8 +971,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">All Categories</a></li>
+                <li><a href="categories.html">Browse Topics</a></li>
                 <li><a href="articles.html">All Articles</a></li>
+                <li><a href="videos.html">Videos</a></li>
             </ul>
         </div>
     </nav>
@@ -1085,45 +988,113 @@ document.addEventListener('DOMContentLoaded', function() {
         for article in articles:
             html_content += f'                    <li><a href="article_{article["id"]}.html">{article["title"]}</a></li>\n'
         
+        category_name = category['name'] if category else 'Unknown'
+        category_id = category['id'] if category else ''
+
         html_content += f"""
                 </ul>
             </aside>
 
             <div class="content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="category_{category_id}.html">{category_name}</a>
+                    <span>/</span>
+                    <span>{section['name']}</span>
+                </div>
+
                 <h1>{section['name']}</h1>
-                <p>{section.get('description', '')}</p>
-                
-                <h2>Articles</h2>
-                <div class="article-list">
+                <p class="section-description">{section.get('description', '')}</p>
+
+                <h2>Articles ({len(articles)})</h2>
+                <ul class="article-list">
 """
         
         for article in articles:
             html_content += f"""
-                    <div class="article-item">
-                        <h3><a href="article_{article['id']}.html">{article['title']}</a></h3>
-                        <div class="article-meta">
-                            Updated: {article['updated_at'][:10]}
-                        </div>
-                    </div>
+                    <li class="article-item">
+                        <a href="article_{article['id']}.html">{article['title']}</a>
+                    </li>
 """
-        
+
         html_content += """
-                </div>
+                </ul>
             </div>
         </main>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p>Offline Help Center - Generated on """ + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + """</p>
+            <p>© 2025 Userology. All rights reserved.</p>
         </div>
     </footer>
 </body>
 </html>
 """
-        
+
         with open(f"{self.output_dir}/section_{section['id']}.html", 'w', encoding='utf-8') as f:
             f.write(html_content)
+
+    def get_related_articles_html(self, current_article, section):
+        """Get HTML for related articles in the same section"""
+        if not section:
+            return '<li>No related articles</li>'
+
+        section_articles = [a for a in self.articles if a['section_id'] == section['id'] and a['id'] != current_article['id']]
+
+        if not section_articles:
+            return '<li>No related articles</li>'
+
+        # Limit to 3 related articles
+        related = section_articles[:3]
+
+        html_parts = []
+        for article in related:
+            html_parts.append(f'<li><a href="article_{article["id"]}.html">{article["title"]}</a></li>')
+
+        return '\n                        '.join(html_parts)
+
+    def get_article_navigation_html(self, current_article, section):
+        """Get HTML for prev/next article navigation"""
+        if not section:
+            return ''
+
+        section_articles = [a for a in self.articles if a['section_id'] == section['id']]
+
+        if len(section_articles) <= 1:
+            return ''
+
+        current_index = next((i for i, a in enumerate(section_articles) if a['id'] == current_article['id']), -1)
+
+        if current_index == -1:
+            return ''
+
+        prev_article = section_articles[current_index - 1] if current_index > 0 else None
+        next_article = section_articles[current_index + 1] if current_index < len(section_articles) - 1 else None
+
+        html = '<div class="article-nav">'
+
+        if prev_article:
+            html += f'''
+                <a href="article_{prev_article['id']}.html" class="article-nav-prev">
+                    <span class="article-nav-label">← Previous</span>
+                    <span class="article-nav-title">{prev_article['title']}</span>
+                </a>'''
+        else:
+            html += '<div class="article-nav-prev"></div>'
+
+        if next_article:
+            html += f'''
+                <a href="article_{next_article['id']}.html" class="article-nav-next">
+                    <span class="article-nav-label">Next →</span>
+                    <span class="article-nav-title">{next_article['title']}</span>
+                </a>'''
+        else:
+            html += '<div class="article-nav-next"></div>'
+
+        html += '</div>'
+        return html
 
     def create_article_page(self, article):
         """Create an article page"""
@@ -1150,12 +1121,18 @@ document.addEventListener('DOMContentLoaded', function() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{article['title']} - Userology Help Center</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
     <header class="header">
         <div class="container">
-            <h1>Userology Help Center</h1>
-            <p>Your complete guide to using Userology</p>
+            <div class="header-branding">
+                <img src="logo.png" alt="Userology Logo" class="header-logo">
+                <div class="header-text">
+                    <h1>Userology Help Center</h1>
+                    <p>Your complete guide to using Userology</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -1163,8 +1140,9 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="container">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">All Categories</a></li>
+                <li><a href="categories.html">Browse Topics</a></li>
                 <li><a href="articles.html">All Articles</a></li>
+                <li><a href="videos.html">Videos</a></li>
             </ul>
         </div>
     </nav>
@@ -1187,24 +1165,48 @@ document.addEventListener('DOMContentLoaded', function() {
             </aside>
 
             <div class="content">
+                <div class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="category_{category['id'] if category else ''}.html">{category['name'] if category else 'Unknown'}</a>
+                    <span>/</span>
+                    <a href="section_{section['id'] if section else ''}.html">{section['name'] if section else 'Unknown'}</a>
+                    <span>/</span>
+                    <span>{article['title']}</span>
+                </div>
+
                 <h1>{article['title']}</h1>
                 <div class="article-meta">
-                    {category['name'] if category else 'Unknown'} → {section['name'] if section else 'Unknown'} | 
                     Updated: {article['updated_at'][:10]}
                 </div>
-                
+
+                <div class="toc">
+                    <h4>On this page</h4>
+                </div>
+
                 <div class="article-content">
                     {fixed_body}
                 </div>
+
+                <div class="related-articles">
+                    <h3>Related Articles</h3>
+                    <ul>
+                        {self.get_related_articles_html(article, section)}
+                    </ul>
+                </div>
+
+                {self.get_article_navigation_html(article, section)}
             </div>
         </main>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p>Offline Help Center - Generated on """ + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + """</p>
+            <p>© 2025 Userology. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
 """
@@ -1251,19 +1253,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="article-grid">
 """
         
+        # Define icons for categories (simple mapping based on name keywords)
+        icons = {
+            'Study Setup': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>',
+            'Interview Plan': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>',
+            'Study Settings': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>',
+            'Launch': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+            'Responses and Recordings': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>',
+            'Settings and Admin': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>',
+            'Results and Reports': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>'
+        }
+        default_icon = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>'
+
         for category in self.categories:
             sections = self.sections_by_category.get(category['id'], [])
             total_articles = sum(len(self.articles_by_section.get(s['id'], [])) for s in sections)
+            icon = icons.get(category['name'], default_icon)
             
             html_content += f"""
-                    <a href="category_{category['id']}.html" class="article-card">
+                    <a href="category_{category['id']}.html" class="topic-card">
+                        <div class="topic-icon">{icon}</div>
                         <h3>{category['name']}</h3>
-                        <div class="article-meta">
-                            {len(sections)} sections, {total_articles} articles
-                        </div>
-                        <div class="article-excerpt">
-                            {category.get('description', 'Browse articles in this category')}
-                        </div>
+                        <p class="topic-description">{category.get('description', 'Browse articles in this category')}</p>
+                        <div class="topic-meta">{len(sections)} sections, {total_articles} articles</div>
                     </a>
 """
         
@@ -1324,16 +1336,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 </html>
 """
-        
         with open(f"{self.output_dir}/articles.html", 'w', encoding='utf-8') as f:
             f.write(html_content)
 
 def main():
-    print("🚀 Generating offline help center website...")
+    print("Generating offline help center website...")
     generator = OfflineWebsiteGenerator()
     generator.create_all_pages()
-    print(f"✅ Website generated successfully!")
-    print(f"📁 Open {generator.output_dir}/index.html in your browser to view the offline help center")
+    print(f"Website generated successfully!")
+    print(f"Open {generator.output_dir}/index.html in your browser to view the offline help center")
 
 if __name__ == "__main__":
     main()
